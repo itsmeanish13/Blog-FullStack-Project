@@ -13,6 +13,7 @@ router.register('comments', CommentViewSet, basename='comment')
 
 urlpatterns = [
     path('', include(router.urls)),
+    
     path('register/', register, name='register'),
     path('user/', current_user, name='current_user'),
     # Add these two lines below:
