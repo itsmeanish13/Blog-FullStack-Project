@@ -157,3 +157,11 @@ SIMPLE_JWT = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# settings.py
+
+ALLOWED_HOSTS = [
+    'blog-fullstack-project-h5tr.onrender.com', 
+    'localhost', 
+    '127.0.0.1'
+]
