@@ -8,22 +8,18 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Clear previous errors
-        
         try {
-            // We use standard axios here to avoid the interceptor loop
-           const response = await api.post('token/', { username, password }); // Use your DRF JWT path
-            
+            // Note the trailing slash '/' and the endpoint name 'token/'
+            const response = await api.post('token/', { username, password });
+
             localStorage.setItem('access_token', response.data.access);
             localStorage.setItem('refresh_token', response.data.refresh);
-            
-            // Redirect to home and force a reload to update App.jsx state
-            window.location.href = '/'; 
+
+            // Navigate to home/dashboard
         } catch (err) {
-            console.error("Login error details:", err.response?.data);
-            setError(err.response?.data?.detail || 'Invalid username or password');
+            console.error("Login Error:", err.response?.data);
         }
-    };
+        };
 
     return (
         <div className="max-w-md mx-auto mt-20 p-8 bg-slate-800 rounded-2xl border border-slate-700">
