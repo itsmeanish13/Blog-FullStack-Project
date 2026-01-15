@@ -28,7 +28,7 @@ function App() {
         {/* Navigation Bar */}
         <nav className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900 sticky top-0 z-50">
           <Link to="/" className="text-2xl font-bold text-blue-500 hover:text-blue-400">
-            Fullstack Blog
+            Blog
           </Link>
 
           <div className="flex items-center gap-6">
