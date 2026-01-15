@@ -33,12 +33,13 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-local-only-key')
 # 2. DEBUG: False in production, True locally
 DEBUG = env('DEBUG')
 
-# 3. ALLOWED_HOSTS: Add your future Render URL here
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1', 'localhost'])
+# settings.py
 
-# 4. CORS: Allow your future Vercel URL to talk to this API
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:5173'])
+# This allows any host to access the site (good for fixing the 400 error quickly)
+ALLOWED_HOSTS = ['*'] 
 
+# This allows your React app (or any app) to talk to the API
+CORS_ALLOW_ALL_ORIGINS = True
 APPEND_SLASH = True
 
 
