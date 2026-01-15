@@ -12,10 +12,7 @@ const Login = () => {
         
         try {
             // We use standard axios here to avoid the interceptor loop
-            const response = await axios.post('http://127.0.0.1:8000/api/token/', {
-                username: username,
-                password: password
-            });
+           const response = await api.post('token/', { username, password }); // Use your DRF JWT path
             
             localStorage.setItem('access_token', response.data.access);
             localStorage.setItem('refresh_token', response.data.refresh);
